@@ -1,0 +1,37 @@
+{
+  "name": "@mag/web",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack --port ${WEB_PORT:-3000}",
+    "build": "next build",
+    "start": "next start --port ${WEB_PORT:-3000}",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mag/ai": "workspace:*",
+    "@mag/config": "workspace:*",
+    "@mag/csv": "workspace:*",
+    "@mag/db": "workspace:*",
+    "@mag/domain": "workspace:*",
+    "@mag/email": "workspace:*",
+    "@mag/observability": "workspace:*",
+    "@mag/ui": "workspace:*",
+    "next": "16.3.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "catalog:",
+    "eslint-config-next": "16.3.4",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

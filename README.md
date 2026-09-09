@@ -1,31 +1,61 @@
 # MAG
 
-SaaS для маркетинговых агентств и фрилансеров: загрузка маркетинговых данных, автоматический расчёт KPI, брендированные клиентские отчёты и проверяемые AI-комментарии.
+SaaS для фрилансеров и небольших маркетинговых агентств: CSV-выгрузки → KPI → брендированный отчёт и проверяемые AI-комментарии.
 
-Проект находится на этапе подготовки к разработке.
+Сейчас в репозитории — **этап 1: bootstrap**. Продуктовые экраны, импорт и AI не реализованы.
+
+## Быстрый старт
+
+Нужны **Node.js 24**, **pnpm 12.3.4** и **Docker**.
+
+```bash
+nvm use
+cp .env.example .env
+# Замените SESSION_SECRET на случайную строку не короче 32 символов.
+
+pnpm install
+pnpm infra:up
+pnpm dev
+```
+
+- Приложение: http://localhost:3000
+- Готовность web: http://localhost:3000/api/health
+- Готовность worker: http://localhost:3001/health
+
+Если порты 5432 или 6379 заняты, задайте в `.env` свободные `POSTGRES_PUBLISH_PORT` / `REDIS_PUBLISH_PORT` и те же хост-порты в `DATABASE_URL` / `REDIS_URL`.
+
+Подробности: [`docs/runbooks/local-development.md`](docs/runbooks/local-development.md), вклад в проект: [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+## Команды
+
+```bash
+pnpm dev          # web + worker
+pnpm build        # сборка web и worker
+pnpm typecheck    # TypeScript strict
+pnpm lint         # ESLint
+pnpm test         # unit и integration (нужны PostgreSQL и Redis)
+pnpm format       # Prettier
+pnpm infra:up     # PostgreSQL 17 и Redis 7
+pnpm infra:down
+```
+
+## Стек этапа 1
+
+| Инструмент | Версия                    |
+| ---------- | ------------------------- |
+| Node.js    | 24 (Active LTS, `.nvmrc`) |
+| pnpm       | 12.3.4                    |
+| Next.js    | 16.3.x                    |
+| TypeScript | 5.9.x, `strict`           |
+| PostgreSQL | 17 (Docker Compose)       |
+| Redis      | 7 (Docker Compose)        |
+| Turborepo  | 2.x                       |
 
 ## Документация
 
-- [Подробный продуктовый и технический план](docs/PROJECT_PLAN.md)
-- [Готовые чаты по этапам разработки](docs/chats/README.md)
+- [План продукта](docs/PROJECT_PLAN.md)
+- [Discovery, этап 0](docs/discovery/README.md)
+- [ADR-001: модульный монолит](docs/adr/001-modular-monolith.md)
+- [Чаты по этапам](docs/chats/README.md)
 
-## Планируемый MVP
-
-1. Создание агентства и клиентов.
-2. Загрузка CSV и сопоставление колонок.
-3. Расчёт KPI и сравнение периодов.
-4. AI-комментарии на основе проверенных фактов.
-5. Брендированный веб-отчёт и PDF.
-6. Защищённая клиентская ссылка и отправка по email.
-
-## Планируемый стек
-
-- Next.js, React, TypeScript;
-- Tailwind CSS и shadcn/ui;
-- PostgreSQL и Drizzle ORM;
-- Redis и BullMQ;
-- S3-совместимое Object Storage;
-- YandexGPT/GigaChat через переносимый AI-интерфейс;
-- Docker и GitHub Actions.
-
-Инструкции локального запуска будут добавлены вместе с bootstrap приложения.
+CSV v1, KPI и структура отчёта зафиксированы в discovery как спецификация владельца. Реальные выгрузки в репозитории пока не заменяют синтетические примеры — это не блокирует bootstrap (решение D-041), но блокирует этапы импорта и отчёта.

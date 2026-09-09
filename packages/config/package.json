@@ -1,0 +1,33 @@
+{
+  "name": "@mag/config",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./env": "./src/env.ts",
+    "./eslint": "./eslint/index.js",
+    "./prettier": "./prettier/index.js",
+    "./typescript/base.json": "./typescript/base.json",
+    "./typescript/node.json": "./typescript/node.json",
+    "./typescript/nextjs.json": "./typescript/nextjs.json"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.39.5",
+    "dotenv": "^17.4.2",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "^10.1.8",
+    "typescript-eslint": "^8.70.0",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

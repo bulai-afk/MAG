@@ -1,0 +1,29 @@
+{
+  "name": "@mag/worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsup",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mag/config": "workspace:*",
+    "@mag/db": "workspace:*",
+    "@mag/observability": "workspace:*",
+    "bullmq": "^6.3.4",
+    "ioredis": "^5.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.13",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

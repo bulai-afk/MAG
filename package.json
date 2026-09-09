@@ -1,0 +1,41 @@
+{
+  "name": "mag",
+  "private": true,
+  "version": "0.0.0",
+  "description": "MAG monorepo — branded marketing reports from CSV exports",
+  "packageManager": "pnpm@12.3.4",
+  "engines": {
+    "node": "^24.11.0",
+    "pnpm": "^12.3.4"
+  },
+  "scripts": {
+    "dev": "turbo dev --filter=@mag/web --filter=@mag/worker",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "infra:up": "docker compose up -d --wait",
+    "infra:down": "docker compose down",
+    "infra:ps": "docker compose ps",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "eslint": "catalog:",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "catalog:",
+    "turbo": "^2.10.12",
+    "typescript": "catalog:"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+pnpm-lock.yaml
+**/node_modules
+**/.next
+**/dist
+**/coverage
+**/.turbo
+.data
+.next
+dist
+coverage
+.turbo
+docs/PROJECT_PLAN.md
+docs/chats
+docs/discovery
+apps/web/next-env.d.ts

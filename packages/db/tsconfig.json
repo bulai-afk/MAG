@@ -1,0 +1,11 @@
+{
+  "extends": "@mag/config/typescript/node.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"]
+}

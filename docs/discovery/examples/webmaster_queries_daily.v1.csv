@@ -1,0 +1,13 @@
+date;query;page_url;impressions;clicks;avg_position
+2026-07-01;установка кондиционера;https://example.invalid/uslugi;420;18;3.4
+2026-07-02;установка кондиционера;https://example.invalid/uslugi;455;21;3.2
+2026-07-03;установка кондиционера;https://example.invalid/uslugi;390;15;3.6
+2026-07-01;ремонт кондиционера цена;https://example.invalid/remont;310;9;5.1
+2026-07-02;ремонт кондиционера цена;https://example.invalid/remont;328;11;4.9
+2026-07-03;ремонт кондиционера цена;https://example.invalid/remont;301;8;5.3
+2026-08-01;установка кондиционера;https://example.invalid/uslugi;480;24;3.1
+2026-08-02;установка кондиционера;https://example.invalid/uslugi;510;26;2.9
+2026-08-03;установка кондиционера;https://example.invalid/uslugi;445;19;3.3
+2026-08-01;ремонт кондиционера цена;https://example.invalid/remont;360;12;4.6
+2026-08-02;ремонт кондиционера цена;https://example.invalid/remont;372;13;4.4
+2026-08-03;ремонт кондиционера цена;https://example.invalid/remont;340;10;4.8

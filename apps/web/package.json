@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack --port ${WEB_PORT:-3000}",
     "build": "next build",
     "start": "next start --port ${WEB_PORT:-3000}",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck": "next typegen && tsc --noEmit -p tsconfig.json",
     "lint": "eslint .",
     "test": "vitest run --passWithNoTests"
   },

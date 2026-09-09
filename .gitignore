@@ -38,6 +38,7 @@ uploads/
 
 # TypeScript
 *.tsbuildinfo
+apps/web/next-env.d.ts
 
 # Temporary files
 tmp/
